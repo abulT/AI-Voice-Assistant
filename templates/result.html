@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>AI Voice Assistant</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Upload Successful ✅</h2>
+
+<h3>Transcript</h3>
+
+<p>{{ transcript }}</p>
+
+<hr>
+
+<h3>Summary</h3>
+
+<p>{{ summary }}</p>
+
+<hr>
+
+<h3>Translate</h3>
+
+<form action="/translate" method="POST">
+
+    <select name="language">
+        <option value="Tamil">Tamil</option>
+        <option value="English">English</option>
+        <option value="Hindi">Hindi</option>
+    </select>
+
+    <button type="submit">
+        Translate
+    </button>
+
+</form>
+
+<hr>
+
+<form action="/chat" method="POST">
+
+    <input
+        type="text"
+        name="question"
+        placeholder="Ask anything about the transcript">
+
+    <br><br>
+
+    <button type="submit">
+        Ask AI
+    </button>
+
+</form>
+
+<br>
+
+<a href="/">Upload Another Audio</a>
+
+</div>
+
+</body>
+
+</html>
